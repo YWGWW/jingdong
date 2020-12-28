@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="1.css">
+</head>
+<body>
+    <div id="all">
+        <header>
+            <div id="headleft"><img src="img/logo.png" id="img1"></div>
+            <div id="headright">
+                <img src="img/header1.png" id="img2">
+                <input type="text" id="text1" placeholder="搜索商家,美食">
+                <span id="span1">搜索</span>
+            </div>
+        </header>
+        <nav>
+            <center><a href="#" id="span2" onclick="money()">我的购物车(0)</a></center>
+        </nav>
+        <div id="shop">
+            <form>
+                <table id="tab1">
+                    <tr>
+                        <td class="td1rd" id="td1td">全选<input type="checkbox" id="check" onclick="flag();che(this);sum()"></td>
+                        <td class="td1rd" id="td2td">菜品</td>
+                        <td class="td1rd" id="td3td">价格(元/份)</td>
+                        <td class="td1rd" id="td4td">数量</td>
+                        <td class="td1rd" id="td5td">操作</td>
+                    </tr>
+                </table>
+                <table id="tab2">
+                    <tr>
+                        <td id="td2rd"><input type="button" id="delch" value="删除选中" onclick="delcho();sele();sum();spanChange();flag()">
+                            <input type="button" id="delch1" value="全部删除" disabled="disabled" onclick="deleteAll();sele();flag();spanChange();sum()"></td>
+                        <td id="td3rd"><span id="sp3">合计￥</span><span id="sp4">0</span><input type="button" id="sumall" value="结算" onclick="sumclear();sele();sum();spanChange();flag()"></td>
+                    </tr>
+                    <tr>
+                        <td id="td4rd"><a href="#" id="lab" onclick="shop()">继续任性点餐</a></td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <article>
+            <section>
+                <div class="sec">
+                    <img src="img/汉堡.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">A米汉堡</td>
+                            <td class="td2">16元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销8148单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥10</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">45分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/汉堡.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">A米汉堡</td>
+                            <td class="td2">16元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销8148单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥10</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">45分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/汉堡.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">A米汉堡</td>
+                            <td class="td2">16元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销8148单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥10</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">45分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/汉堡.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">A米汉堡</td>
+                            <td class="td2">16元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销8148单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥10</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">45分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <div class="sec">
+                    <img src="img/有名堂.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">有名堂(焗饭、小炒)</td>
+                            <td class="td2">14元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销2156单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥0</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">43分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/有名堂.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">有名堂(焗饭、小炒)</td>
+                            <td class="td2">14元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销2156单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥0</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">43分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/有名堂.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">有名堂(焗饭、小炒)</td>
+                            <td class="td2">14元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销2156单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥0</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">43分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/有名堂.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">有名堂(焗饭、小炒)</td>
+                            <td class="td2">14元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销2156单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥0</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">43分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+            <section>
+                <div class="sec">
+                    <img src="img/九宫煮.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">九宫煮私房麻辣烫</td>
+                            <td class="td2">25元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销553单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥15</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">29分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/九宫煮.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">九宫煮私房麻辣烫</td>
+                            <td class="td2">25元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销553单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥15</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">29分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/九宫煮.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">九宫煮私房麻辣烫</td>
+                            <td class="td2">25元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销553单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥15</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">29分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+                <div class="sec">
+                    <img src="img/九宫煮.jpg" class="imgClass">
+                    <table class="tab3">
+                        <tr>
+                            <td colspan="2" class="td1">九宫煮私房麻辣烫</td>
+                            <td class="td2">25元/份</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td3">月销553单</td>
+                        </tr>
+                        <tr>
+                            <td class="td4">起送￥15</td>
+                            <td class="td5">免配送费</td>
+                            <td class="td6">29分钟</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="td7"><input type="button" value="加入购物车" class="but" onclick="add(this);spanChange();sum();sele();flag()"></td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </article>
+    </div>
+</body>
+<script>
+    // 计算购物车数量
+    function spanChange(){
+        var span2=document.getElementById("span2");
+        var spanValue=0;
+        var row=document.getElementById("tab1").rows;
+        for(var i=1;i<row.length;i++){
+            spanValue+=parseInt(row[i].children[3].children[1].value);
+        }
+        span2.innerHTML="我的购物车("+spanValue+")";
+    }
+    // 购物车列表的信息增添
+    function add(obj){
+        var tab1=document.getElementById("tab1");
+        var sect=obj.parentNode.parentNode.parentNode;
+        var td1rd=document.getElementsByClassName("td1rd");
+        var inner=sect.children[0].children[0].innerHTML;
+        var row1=tab1.rows;
+        var num=0;
+        var count=0;
+        for(var j=1;j<row1.length;j++){
+            if(inner==row1[j].children[1].innerHTML){
+                num=j;
+                break;
+            }
+        }
+        if(num!=0){
+            row1[num].children[3].children[1].value++;
+        }else{
+            var row=tab1.insertRow(-1);
+            for(var i=0;i<td1rd.length;i++){
+                var td=row.insertCell(i);
+                if(i==0){
+                    td.innerHTML='<input type="checkbox" class="sel" onclick="sum();sele();flag()">'
+                }else if(i==3){
+                    count++;
+                    td.innerHTML='<input type="button" class="butt1" value="-" onclick="less(this);spanChange();sum()">'+
+                    '<input type="text" class="tex" value="">'+
+                    '<input type="button" class="butt2" value="+" onclick="more(this);spanChange();sum()">';
+                    td.children[1].value=count;
+                }else if(i==4){
+                    td.innerHTML='<input type="button" class="butt3" value="删除" onclick="del(this);sum();spanChange();sele();flag()">';
+                }else{
+                    td.innerHTML=sect.children[0].children[i-1].innerHTML;
+                }
+            }
+        }
+    }
+    // 相同菜品数量减少
+    function less(obj){
+        var inner=parseInt(obj.parentNode.children[1].value);
+        if(inner>1){
+            inner--;
+        }
+        obj.parentNode.children[1].value=inner;
+    }
+    // 相同菜品数量增加
+    function more(obj){
+        obj.parentNode.children[1].value++;
+    }
+    // 合计金额计算
+    function sum(){
+        var row=document.getElementById("tab1").rows;
+        var sp4=document.getElementById("sp4");
+        var sum1=0;
+        for(var i=1;i<row.length;i++){
+            if(row[i].children[0].children[0].checked){
+                sum1=sum1+(parseFloat(row[i].children[2].innerHTML)*parseFloat(row[i].children[3].children[1].value));
+            }
+        }
+        sp4.innerHTML=sum1;
+    }
+    // 判断全选框状态
+    function sele(){
+        var sel=document.getElementsByClassName("sel");
+        var check=document.getElementById("check");
+        var count=0;
+        for(var i=0;i<sel.length;i++){
+            if(sel[i].checked){
+                count++;
+            }
+        }
+        if(count==sel.length&sel.length!=0){
+            check.checked=true;
+        }else{
+            check.checked=false;
+        }
+    }
+    // 全选
+    function che(obj){
+        var sel=document.getElementsByClassName("sel");
+            for(var i=0;i<sel.length;i++){
+                sel[i].checked=obj.checked;
+            }
+        }
+    // 删除当前行
+    function del(obj){
+        var tab1=document.getElementById("tab1");
+        var flag=confirm("删除?");
+        if(flag){
+            tab1.deleteRow(obj.parentNode.parentNode.rowIndex);
+        }
+    }
+    // 删除选中行
+    function delcho(){
+        var tab1=document.getElementById("tab1");
+        var sel=document.getElementsByClassName("sel");
+        var flag=confirm("删除?")
+        if(flag){
+            for(var i=sel.length-1;i>=0;i--){
+                if(sel[i].checked){
+                    tab1.deleteRow(i+1);
+                }
+            }
+        }
+    }
+    // 结算金额并删除选中
+    function sumclear(){
+        var sp4=document.getElementById("sp4");
+        var sum1=parseFloat(sp4.innerHTML);
+        var tab1=document.getElementById("tab1");
+        var sel=document.getElementsByClassName("sel");
+        var flag=confirm("请支付"+sum1+"元!");
+        if(flag){
+            for(var i=sel.length-1;i>=0;i--){
+                if(sel[i].checked){
+                    tab1.deleteRow(i+1);
+                }
+            }
+        }
+    }
+    // 打开主页面
+    function shop(){
+        var shop=document.getElementById("shop");
+        var art=document.getElementsByTagName("article")[0];
+        shop.style.display="none";
+        art.style.display="block";
+    }
+    // 打开结算页面
+    function money(){
+        var shop=document.getElementById("shop");
+        var art=document.getElementsByTagName("article")[0];
+        shop.style.display="block";
+        art.style.display="none";
+    }
+    // 全部删除
+    function deleteAll(){
+        var tab1=document.getElementById("tab1");
+        var flag=confirm("确定要全部删除吗?");
+        if(flag){
+            while(tab1.rows.length>1){
+                tab1.deleteRow(-1);
+            }
+        }
+    }
+    // 全部删除按钮状态
+    function flag(){
+        var check=document.getElementById("check");
+        var delch1=document.getElementById("delch1");
+        if(check.checked){
+            delch1.removeAttribute("disabled");
+        }else{
+            delch1.disabled="disabled";
+        }
+    }
+</script>
+</html>
